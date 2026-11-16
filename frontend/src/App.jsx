@@ -46,7 +46,7 @@ useEffect(() => {
       
     try {
       const response = await fetch(
-  `http://localhost:5000/api/ai/history?sessionId=${sessionId}&page=1`,
+  `https://mern-ai-chatbot-my4h.onrender.com/api/ai/history?sessionId=${sessionId}&page=1`,
    {
   headers: {
     Authorization: `Bearer ${token}`
@@ -101,7 +101,7 @@ useEffect(() => {
     if (!token) return;
     try {
      const response = await fetch(
-  "http://localhost:5000/api/ai/sessions",
+  "https://mern-ai-chatbot-my4h.onrender.com/api/ai/sessions",
   {
     headers: {
       Authorization: `Bearer ${token}`
@@ -121,7 +121,7 @@ useEffect(() => {
         setSessionId(data[0]._id);
       } else {
         const newResponse = await fetch(
-          "http://localhost:5000/api/ai/sessions",
+          "https://mern-ai-chatbot-my4h.onrender.com/api/ai/sessions",
           {
             method: "POST",
             headers: {
@@ -162,7 +162,7 @@ async function renameChat(id) {
 
   try {
     const response = await fetch(
-      `http://localhost:5000/api/ai/sessions/${id}`,
+      `https://mern-ai-chatbot-my4h.onrender.com/api/ai/sessions/${id}`,
       {
         method: "PUT",
         headers: {
@@ -204,7 +204,7 @@ async function deleteChat(id) {
 
   try {
     const response = await fetch(
-      `http://localhost:5000/api/ai/sessions/${id}`,
+      `https://mern-ai-chatbot-my4h.onrender.com/api/ai/sessions/${id}`,
       {
         method: "DELETE",
          headers: {
@@ -247,7 +247,7 @@ async function handleRegister() {
     setAuthMessage("");
 
     const response = await fetch(
-      "http://localhost:5000/api/auth/register",
+      "https://mern-ai-chatbot-my4h.onrender.com/api/auth/register",
       {
         method: "POST",
         headers: {
@@ -282,7 +282,7 @@ async function handleLogin() {
     setAuthMessage("");
 
     const response = await fetch(
-      "http://localhost:5000/api/auth/login",
+      "https://mern-ai-chatbot-my4h.onrender.com/api/auth/login",
       {
         method: "POST",
         headers: {
@@ -355,7 +355,7 @@ function handleUnauthorized(response) {
 
     try {
       const response = await fetch(
-        "http://localhost:5000/api/ai/chat",
+        "https://mern-ai-chatbot-my4h.onrender.com/api/ai/chat",
         {
           method: "POST",
           headers: {
@@ -388,7 +388,7 @@ function handleUnauthorized(response) {
 
       // Refresh the session list
 const sessionsResponse = await fetch(
-  "http://localhost:5000/api/ai/sessions",
+  "https://mern-ai-chatbot-my4h.onrender.com/api/ai/sessions",
   {
     headers: {
       Authorization: `Bearer ${token}`
@@ -413,7 +413,7 @@ setSessions(sessionsData);
 async function createNewChat() {
   try {
     const response = await fetch(
-      "http://localhost:5000/api/ai/sessions",
+      "https://mern-ai-chatbot-my4h.onrender.com/api/ai/sessions",
       {
         method: "POST",
         headers: {
@@ -458,7 +458,7 @@ const loadMoreChats = async () => {
     setLoadingMore(true);
 
    const response = await fetch(
-  `http://localhost:5000/api/ai/history?sessionId=${sessionId}&page=${nextPage}`,
+  `https://mern-ai-chatbot-my4h.onrender.com/api/ai/history?sessionId=${sessionId}&page=${nextPage}`,
   {
     headers: {
       Authorization: `Bearer ${token}`
@@ -523,7 +523,7 @@ async function handleProductSearch() {
     setProducts([]);
 
     const response = await fetch(
-      "http://localhost:5000/api/ai/product-search",
+      "https://mern-ai-chatbot-my4h.onrender.com/api/ai/product-search",
       {
         method: "POST",
         headers: {
