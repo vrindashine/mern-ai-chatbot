@@ -682,7 +682,7 @@ app.get("/api/products", authMiddleware, async (req, res) => {
     });
 
     // Start server
-    app.listen(5000, () => {
+    app.listen(process.env.PORT || 5000, () => {
       console.log("Server running on port 5000");
     });
 
